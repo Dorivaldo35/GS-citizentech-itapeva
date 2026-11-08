@@ -1,0 +1,71 @@
+municipio:
+  nome: Itapeva
+  uf: SP
+  cod_ibge: 3522208
+  populacao_2022: 93869
+  concessionaria: SABESP
+  estacoes_tratamento:
+    - Pilao
+    - Aranhas
+
+evento:
+  nome: Contaminacao por Cryptosporidium
+  data_decreto_calamidade: 2026-11-04
+  classificacao: Desastre biologico de veiculacao hidrica - Nivel III
+  agente: Cryptosporidium (protozoario)
+  orgao_laudo: Instituto Adolfo Lutz
+
+fontes:
+  sisagua:
+    url: https://dados.gov.br/dados/conjuntos-dados/qualidade-da-agua-para-consumo-humano
+    formato: csv
+    frequencia: mensal
+    janela: 2015-01-01/2026-11-30
+
+  sih_sus:
+    url: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sih/cnv/nrsp.def
+    formato: csv
+    frequencia: mensal
+    cids_alvo: [A00, A01, A02, A03, A04, A05, A06, A07, A08, A09, B15]
+
+  sinan:
+    url: https://opendatasus.saude.gov.br/dataset/sinan
+    formato: csv
+    frequencia: anual
+
+  inmet:
+    url: https://bdmep.inmet.gov.br/
+    formato: csv
+    estacao: A714  # Itapeva/SP automatica
+    janela: 2020-01-01/2026-11-30
+
+  ana_hidroweb:
+    url: https://www.snirh.gov.br/hidroweb/
+    formato: csv
+    estacoes: [64600000]  # rio Apiai-Guacu area
+
+  snis:
+    url: http://app4.mdr.gov.br/serieHistorica/
+    formato: xlsx
+    frequencia: anual
+    janela: 2015-2023
+
+  ibge_censo:
+    url: https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html
+    formato: csv
+
+  crise_2026:
+    laudos_ial:
+      url: https://www.ial.sp.gov.br/
+      formato: pdf
+    boletins_sabesp:
+      url: https://www.sabesp.com.br/
+      formato: pdf_html
+    decretos_pm:
+      url: https://www.itapeva.sp.gov.br/
+      formato: pdf
+
+camadas:
+  bronze: data/bronze/
+  silver: data/silver/
+  gold:   data/gold/

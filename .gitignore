@@ -1,0 +1,39 @@
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Dados (dados gerados são reprodutíveis via src/utils/gera_dados_sinteticos.py)
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/gold/.gitkeep
+
+# Material do professor — não publicar
+*.pdf
+
+# IDEs
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Databricks local checkpoints
+.databricks/
+.databricks_scratch/
+
+# Credenciais
+.env
+.env.local
+*secret*
+*credentials*
